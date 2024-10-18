@@ -1,0 +1,21 @@
+- 电脑 PC 端
+  - [进入注册页面](pc/regin/regin.md)
+    - [求职者注册](pc/regin/personal.md)
+    - [招聘者注册](pc/regin/company.md)
+  - 求职者使用手册
+    - [个人中心](pc/regin/my.md)
+    - [找工作](pc/regin/findWork.md)
+    - [找企业](pc/regin/findCompany.md)
+    - 人事考试
+        - [人事考试公告](pc/regin/examNotice.md)
+        - [招考列表](pc/regin/examList.md)
+          - [报名](pc/regin/examSign.md)
+        - [我的报名](pc/regin/examMySign.md)
+          - [缴费](pc/regin/examPay.md)
+          - [打印笔试/面试/报名表](pc/regin/examPrint.md)
+  - [招聘会](pc/regin/interview.md)
+  - [企业使用手册](pc/regin/manage.md)
+- 手机端
+    - [概要](pc/regin/index.md)
+    - [企业管理](pc/regin/manager.md)
+    - [个人中心](pc/regin/individual.md)
