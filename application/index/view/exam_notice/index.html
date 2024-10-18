@@ -1,0 +1,67 @@
+{#layout name="public/layout" /#}
+{#load href="__ROOT__/assets/css/article.css" /#}
+<div id="app">
+    <div class="information_banner">
+        <img src="__ROOT__/assets/images/rsks_banner.jpg">
+    </div>
+    <div class="content_wrapper">
+        <div class="content">
+
+            <div class="information_list_con">
+                {#if condition="count($list) gt 0"#}
+                <div>
+                    {#volist name="list" id="vo"#}
+                    <div class="information_list clearfix">
+                        <div class="information_list_text float">
+                            <a class="title substring" href="{#$vo.link_url#}" target="_blank">
+                                <?php if(!empty($vo['status_cn'])) echo "【{$vo['status_cn']}】";?>
+                                {#$vo.title#}
+                            </a>
+                            <p class="list_con">{#$vo.content#}</p>
+                            <div class="list_text_bottom clearfix">
+                                <span class="original">长丰英才网</span>
+                                <p class="handle_right">
+                                    <span class="handle_time">{#$vo.addtime#}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {#/volist#}
+                </div>
+                {#else#}
+                <div class="list_empty n_bd">
+                    <div class="emp_text">暂时没有数据哦</div>
+                </div>
+                {#/if#}
+                <div id="pagerHtml">
+                    {#$pagerHtml#}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            showSecondLine: false,
+        }
+    })
+    let location_href = location.href
+    if (location_href.indexOf('p=1') > -1) {
+        setPageHref()
+    }
+    function setPageHref() {
+        let a_list = $('#pagerHtml .pagination a')
+        for (let i in a_list) {
+            let href = $(a_list[i]).attr("href")
+            if (href != undefined && href.indexOf('p=1') == -1) {
+                if (href.indexOf('?') > -1) {
+                    $(a_list[i]).attr("href", href + "&p=1")
+                } else {
+                    $(a_list[i]).attr("href", href + "?p=1")
+                }
+            }
+        }
+    }
+</script>

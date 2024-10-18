@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>客服</title>
+</head>
+<body>
+<div>
+    正在结束会话
+</div>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script>
+    wx.config({
+        debug: false,
+        appId: '{#signPackage["appId"]#}',
+        timestamp: '{#signPackage["timestamp"]#}',
+        nonceStr: '{#signPackage["nonceStr"]#}',
+        signature: '{#signPackage["signature"]#}',
+        jsApiList: [
+            'closeWindow'//关闭窗口接口
+        ]
+    });
+    wx.ready(function () {
+        wx.closeWindow();
+    });
+</script>
+</body>
+</html>
